@@ -15,13 +15,16 @@ const Login = ({ touched, errors, status, handleSubmit }) => {
 
   return (
     <div>
-       <h2>Login here!</h2>
+      <h2>Login here!</h2>
       <Form onSubmit={handleSubmit}>
         {" "}
         <label>
           {" "}
           Name:
           <Field type="text" name="username" placeholder="Username" />
+          {touched.username && errors.username && (
+            <p className="error">{errors.username}</p>
+          )}
         </label>
         <label>
           {" "}
@@ -46,8 +49,7 @@ const FormikLogin = withFormik({
   },
 
   validationSchema: Yup.object().shape({
-    username: Yup.string()
-      .required(),
+    username: Yup.string().required(),
     password: Yup.string()
       .min(6)
       .max(20)
@@ -58,11 +60,11 @@ const FormikLogin = withFormik({
     api
       .post("/auth/login", {}, { auth: values })
       .then(response => {
+         console.log(response);
         setStatus(response.data);
         props.loggedStatus();
         resetForm();
         setSubmitting(false);
-        props.history.push("/home");
       })
       .catch(err => console.log(err.response));
   }
