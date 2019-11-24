@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 import api from "../utils/axiosWithAuth";
+import { Link } from "react-router-dom";
 
 const Login = ({ touched, errors, status, handleSubmit }) => {
   const [login, setLogin] = useState([]);
@@ -36,6 +37,10 @@ const Login = ({ touched, errors, status, handleSubmit }) => {
         </label>
         <button type="submit">Login</button>{" "}
       </Form>{" "}
+      Already a user?{" "}
+      <Link to="/register">
+        <button> Login here!</button>
+      </Link>
     </div>
   );
 };
@@ -60,7 +65,7 @@ const FormikLogin = withFormik({
     api
       .post("/auth/login", {}, { auth: values })
       .then(response => {
-         console.log(response);
+        console.log(response);
         setStatus(response.data);
         props.loggedStatus();
         resetForm();
