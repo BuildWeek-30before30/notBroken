@@ -21,7 +21,7 @@ const List = () => {
   return (
     <div className="dummyList">
       <TaskForm></TaskForm>
-      <h3>My bucketlist</h3>
+      <h3>Everyone's Lists</h3>
       {lists.map((list) => {
         return (<Task list={list} key={list.id}/>);
       })}
