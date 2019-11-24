@@ -3,6 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import Login from "./Login";
 import Register from "./Register";
 import List from "./List"
+import PrivateRoute from "./PrivateRoute"
 
 function Routes() {
   return (
@@ -10,7 +11,7 @@ function Routes() {
       <Switch>
         <Route exact path="/" component={Login}></Route>
         <Route path="/register" component={Register}></Route>
-        <Route path="/list" component={List}></Route>
+        <PrivateRoute path="/list" component={List}></PrivateRoute>
       </Switch>
     </div>
   );
