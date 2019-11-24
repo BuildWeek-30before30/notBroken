@@ -1,8 +1,8 @@
 import React from "react"
 
-const List =()=>{
+const List =(props)=>{
 return(
-    <div>Task</div>
+<div className="dummy task">{props.task}</div>
 )
 }
 
