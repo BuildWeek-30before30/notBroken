@@ -52,11 +52,11 @@ const FormikRegister = withFormik({
     username: Yup.string().required(),
     password: Yup.string()
       .min(6)
-      .max(20)
+      .max(16)
       .required()
   }),
 
-  handleSubmit(values, { props, resetForm, setSubmitting, setStatus }) {
+  handleSubmit(values, { setStatus }) {
     api
       .post("/auth/register", values)
       .then(response => {
