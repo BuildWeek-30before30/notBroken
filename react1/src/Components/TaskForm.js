@@ -3,9 +3,13 @@ import React from "react";
 const List = () => {
   return (
     <div className="dummyForm">
-      <form>
-        <input placeholder="New Goal"></input>
-        <button type="submit">Add to List</button>
+      <form
+        onSubmit={event => {
+          event.preventDefault();
+        }}
+      >
+        <input placeholder="New List"></input>
+        <button type="submit">Publish List</button>
       </form>
     </div>
   );
