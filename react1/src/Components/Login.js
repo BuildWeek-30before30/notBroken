@@ -50,7 +50,7 @@ const FormikLogin = withFormik({
       .required(),
     password: Yup.string()
       .min(6)
-      .max(12)
+      .max(20)
       .required()
   }),
 
