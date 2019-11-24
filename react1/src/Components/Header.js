@@ -10,6 +10,9 @@ function Header() {
             <li>
               <Link to="/">Login</Link>
             </li>
+            <li>
+              <Link to="/list">My List</Link>
+            </li>
           </ul>
         </nav>
         <button onClick={localStorage.setItem("loggedIn", "false")}>
