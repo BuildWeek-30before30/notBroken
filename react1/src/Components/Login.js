@@ -37,9 +37,9 @@ const Login = ({ touched, errors, status, handleSubmit }) => {
         </label>
         <button type="submit">Login</button>{" "}
       </Form>{" "}
-      Already a user?{" "}
+      Not yet a user?{" "}
       <Link to="/register">
-        <button> Login here!</button>
+        <button>Join the fun!</button>
       </Link>
     </div>
   );
