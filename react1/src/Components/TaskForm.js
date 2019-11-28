@@ -8,7 +8,7 @@ const List = () => {
           event.preventDefault();
         }}
       >
-        <input placeholder="New List"></input>
+        <input placeholder="New List (comming soon)"></input>
         <button type="submit">Publish List</button>
       </form>
     </div>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 import api from "../utils/axiosWithAuth";
+import {Button} from "reactstrap"
 
 const Register = ({ touched, errors, status, handleSubmit }) => {
   const [register, setRegister] = useState([]);
@@ -34,7 +35,7 @@ const Register = ({ touched, errors, status, handleSubmit }) => {
             <p className="error">{errors.password}</p>
           )}
         </label>
-        <button type="submit">Register</button>{" "}
+        <Button type="submit">Register</Button>{" "}
       </Form>{" "}
     </div>
   );

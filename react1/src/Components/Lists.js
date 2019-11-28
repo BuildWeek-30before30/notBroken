@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Task from "./ListCard";
 import TaskForm from "./TaskForm";
 import api from "../utils/axiosWithAuth";
+import { Row } from "reactstrap";
 
 const List = () => {
   const [lists, setLists] = useState([]);
@@ -10,7 +11,7 @@ const List = () => {
     api
       .get("/lists")
       .then(response => {
-        console.log(response.data)
+        console.log(response.data);
         setLists(response.data);
       })
       .catch(error => {
@@ -22,9 +23,11 @@ const List = () => {
     <div className="dummyList">
       <TaskForm></TaskForm>
       <h3>Everyone's Lists</h3>
-      {lists.map((list) => {
-        return (<Task list={list} key={list.id}/>);
-      })}
+      <Row>
+        {lists.map(list => {
+          return <Task list={list} key={list.id} />;
+        })}
+      </Row>
     </div>
   );
 };

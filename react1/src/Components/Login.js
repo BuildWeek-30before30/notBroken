@@ -3,6 +3,7 @@ import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 import api from "../utils/axiosWithAuth";
 import { Link } from "react-router-dom";
+import {Button} from 'reactstrap'
 
 const Login = ({ touched, errors, status, handleSubmit }) => {
   const [login, setLogin] = useState([]);
@@ -35,11 +36,11 @@ const Login = ({ touched, errors, status, handleSubmit }) => {
             <p className="error">{errors.password}</p>
           )}
         </label>
-        <button type="submit">Login</button>{" "}
+        <Button type="submit">Login</Button>{" "}
       </Form>{" "}
       Not yet a user?{" "}
       <Link to="/register">
-        <button>Join the fun!</button>
+        <Button>Join the fun!</Button>
       </Link>
     </div>
   );
